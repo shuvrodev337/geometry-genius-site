@@ -32,72 +32,167 @@
       </nav>
     </header>
 
-    <main class="mt-6"> <section class="grid sm:grid-cols-41 md:grid-cols-4 gap-4">
-        <div class="p-10 flex flex-col justify-center items-center space-y-4 text-center border border-gray-300 rounded-lg">
-            <img class="h-full" src="images/triangle.png" alt="">
+    <main class="mt-6">
+      <section class="flex flex-col md:flex-row lg:flex-row gap-4">
+        <!-- Geometrical cards -->
+
+        <div class="card-group grid sm:grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- triangle-card -->
+          <div
+            class="p-6 flex flex-col justify-center items-center space-y-4 text-center border border-gray-300 rounded-lg"
+          >
+            <img class="w-full h-40" src="images/triangle.png" alt="" />
             <h5 class="mb-2 text-2xl font-bold text-center">Triangle</h5>
-            <p class="text-gray-700">A108 Adam Street</p>
-              <button id="calculate-button" class="bg-blue-500 px-4 py-2 rounded font-medium text-white w-3/4">
+            <p class="text-gray-700">Area (A) = 0.5 X&nbsp;&nbsp;b&nbsp;&nbsp;X h</p>
+            <div class="md:flex gap-2">
+                <input id="triangle-b-field" class=" w-1/2 p-1 pl-2 text-gray-90 rounded bg-slate-100 border-none shadow" placeholder="b" type="text" />
+                <p>cm</p>
+                <input id="triangle-h-field" class=" w-1/2 p-1 pl-2 text-gray-90 rounded bg-slate-100 border-none shadow" placeholder="h" type="text" />
+                <p>cm</p>
+            </div>
+            <button
+              id="btn-triangle-area"
+              class="bg-blue-500 px-4 py-2 rounded font-medium text-white w-3/4"
+            >
               Calculate
-            </button> 
+            </button>
           </div>
-          <div class="p-10 flex flex-col justify-center items-center space-y-4 text-center border border-gray-300 rounded-lg">
-            <img class="h-full" src="images/rectangle.png" alt="">
+          <!-- Rectangle card -->
+          <div
+            class="p-6 flex flex-col justify-center items-center space-y-4 text-center border border-gray-300 rounded-lg"
+          >
+            <img class="w-full h-40" src="images/rectangle.png" alt="" />
             <h5 class="mb-2 text-2xl font-bold text-center">Rectangle</h5>
-            <p class="text-gray-700">A108 Adam Street</p>
-              <button id="calculate-button" class="bg-blue-500 px-4 py-2 rounded font-medium text-white w-3/4">
+            <p class="text-gray-700">Area (A) = w&nbsp;&nbsp;X&nbsp;&nbsp;I</p>
+            <div class="md:flex gap-2">
+                <input id="rectangle-w-field" class=" w-1/2 p-1 pl-2 text-gray-90 rounded bg-slate-100 border-none shadow" placeholder="w" type="text" />
+                <p>cm</p>
+                <input id="rectagle-i-field" class=" w-1/2 p-1 pl-2 text-gray-90 rounded bg-slate-100 border-none shadow" placeholder="i" type="text" />
+                <p>cm</p>
+            </div>
+            <button
+              id="btn-rectangle-area"
+              class="bg-blue-500 px-4 py-2 rounded font-medium text-white w-3/4"
+            >
               Calculate
-            </button> 
+            </button>
           </div>
-      <div class="p-10 flex flex-col justify-center items-center space-y-4 text-center border border-gray-300 rounded-lg">
-        <img class="h-full" src="images/parallelogram.png" alt="">
-        <h5 class="mb-2 text-2xl font-bold text-center">Parallelogram</h5>
-        <p class="text-gray-700">A108 Adam Street</p>
-          <button id="calculate-button" class="bg-blue-500 px-4 py-2 rounded font-medium text-white w-3/4">
-          Calculate
-        </button> 
-      </div>
-      <div id="area-calculation" class="order-last md:order-none  card-item max-w-sm bg-white border border-gray-300 rounded-lg  text-center p-4">
-       
-        <!-- <div class="p-5"> -->
-          <h5 class="mb-2 text-2xl font-bold text-center underline p-5">Area calculation</h5>
-          <p class="mb-3 font-normal">Here are the biggest enterprise .</p>
-        <!-- </div> -->
-      </div>
-      
+          <!-- Parallelogram card -->
+          <div
+            class="p-6 flex flex-col justify-center items-center space-y-4 text-center border border-gray-300 rounded-lg"
+          >
+            <img class="w-full h-40" src="images/parallelogram.png" alt="" />
+            <h5 class="mb-2 text-2xl font-bold text-center">Parallelogram</h5>
+            <p class="text-gray-700">Area (A) = b &nbsp;&nbsp;X&nbsp;&nbsp; h</p>
+            <div class="md:flex gap-2">
+                <input id="parallelogram-b-field" class=" w-1/2 p-1 pl-2 text-gray-90 rounded bg-slate-100 border-none shadow" placeholder="b" type="text" />
+                <p>cm</p>
+                <input id="parallelogram-h-field" class=" w-1/2 p-1 pl-2 text-gray-90 rounded bg-slate-100 border-none shadow" placeholder="h" type="text" />
+                <p>cm</p>
+            </div>
+            <button
+              id="btn-parallelogram-area"
+              class="bg-blue-500 px-4 py-2 rounded font-medium text-white w-3/4"
+            >
+              Calculate
+            </button>
+          </div>
+          <!-- Rhombus card -->
+          <div
+            class="p-10 flex flex-col justify-center items-center space-y-4 text-center border border-gray-300 rounded-lg"
+          >
+            <img class="w-full h-40" src="images/rhombus.png" alt="" />
+            <h5 class="mb-2 text-2xl font-bold text-center">Rhombus</h5>
+            <p class="text-gray-700">Area (A) = 0.5 X d<sub>1</sub> X d<sub>2</sub></p>
+            <div class="md:flex gap-2">
+                <input id="rhombus-d1-field" class=" w-1/2 p-1 pl-2 text-gray-90 rounded bg-slate-100 border-none shadow" placeholder="d1" type="text" />
+                <p>cm</p>
+                <input id="rhombus-d2-field" class=" w-1/2 p-1 pl-2 text-gray-90 rounded bg-slate-100 border-none shadow" placeholder="d2" type="text" />
+                <p>cm</p>
+            </div>
+            <button
+              id="btn-rhombus-area"
+              class="bg-blue-500 px-4 py-2 rounded font-medium text-white w-3/4"
+            >
+              Calculate
+            </button>
+          </div>
+          <!-- Pentagon card -->
+          <div
+            class="p-10 flex flex-col justify-center items-center space-y-4 text-center border border-gray-300 rounded-lg"
+          >
+            <img class="w-full h-40" src="images/pentagon.png" alt="" />
+            <h5 class="mb-2 text-2xl font-bold text-center">Pentagon</h5>
+            <p class="text-gray-700">Area (A) = 0.5&nbsp;&nbsp; X  p&nbsp;&nbsp;X&nbsp;&nbsp;b</p>
+            <div class="md:flex gap-2">
+                <input id="pentagon-p-field" class=" w-1/2 p-1 pl-2 text-gray-90 rounded bg-slate-100 border-none shadow" placeholder="p" type="text" />
+                <p>cm</p>
+                <input id="pentagon-b-field" class=" w-1/2 p-1 pl-2 text-gray-90 rounded bg-slate-100 border-none shadow" placeholder="b" type="text" />
+                <p>cm</p>
+            </div>
+            <button
+              id="calculate-button"
+              class="bg-blue-500 px-4 py-2 rounded font-medium text-white w-3/4"
+            >
+              Calculate
+            </button>
+          </div>
+          <!-- Ellipse card -->
+          <div
+            class="p-10 flex flex-col justify-center items-center space-y-4 text-center border border-gray-300 rounded-lg"
+          >
+            <img class="w-full h-40" src="images/ellipse.png" alt="" />
+            <h5 class="mb-2 text-2xl font-bold text-center">Ellipse</h5>
+            <p class="text-gray-700">Area (A) = <span>&#960;</span> ab</p>
+            <div class="md:flex gap-2">
+                <input id="ellipse-a-field" class=" w-1/2 p-1 pl-2 text-gray-90 rounded bg-slate-100 border-none shadow" placeholder="a" type="text" />
+                <p>cm</p>
+                <input id="ellipse-b-field" class=" w-1/2 p-1 pl-2 text-gray-90 rounded bg-slate-100 border-none shadow" placeholder="b" type="text" />
+                <p>cm</p>
+            </div>
+            <button
+              id="calculate-button"
+              class="bg-blue-500 px-4 py-2 rounded font-medium text-white w-3/4"
+            >
+              Calculate
+            </button>
+          </div>
+        </div>
 
-      <div class="p-10 flex flex-col justify-center items-center space-y-4 text-center border border-gray-300 rounded-lg">
-        <img class="h-full" src="images/rhombus.png" alt="">
-        <h5 class="mb-2 text-2xl font-bold text-center">Rhombus</h5>
-        <p class="text-gray-700">A108 Adam Street</p>
-          <button id="calculate-button" class="bg-blue-500 px-4 py-2 rounded font-medium text-white w-3/4">
-          Calculate
-        </button> 
-      </div>
+        <!--  Calculation card -->
+        <div
+          class="area-calculaton h-80 w-full md:w-[40%] lg:w-[40%] mx-auto text-center border border-gray-300 rounded-lg overflow-x-auto"
+        >
+          <h5 class="mb-2 text-2xl font-bold text-center underline p-5">
+            Area calculation
+          </h5>
 
-
-
-    <div class="p-10 flex flex-col justify-center items-center space-y-4 text-center border border-gray-300 rounded-lg">
-        <img class="h-full" src="images/pentagon.png" alt="">
-        <h5 class="mb-2 text-2xl font-bold text-center">Pentagon</h5>
-        <p class="text-gray-700">A108 Adam Street</p>
-          <button id="calculate-button" class="bg-blue-500 px-4 py-2 rounded font-medium text-white w-3/4">
-          Calculate
-        </button> 
-      </div>
-
-
-      <div class="p-10 flex flex-col justify-center items-center space-y-4 text-center border border-gray-300 rounded-lg">
-        <img class="h-full" src="images/ellipse.png" alt="">
-        <h5 class="mb-2 text-2xl font-bold text-center">Ellipse</h5>
-        <p class="text-gray-700">A108 Adam Street</p>
-          <button id="calculate-button" class="bg-blue-500 px-4 py-2 rounded font-medium text-white w-3/4">
-          Calculate
-        </button> 
-      </div>
-
-
-    </section>
+          <!-- <h1 class="text-3xl text-center font-bold underline mt-5"> -->
+          <!-- ToTal Products: <span id="total-product">0</span> -->
+          <!-- </h1> -->
+          <!-- <div class="overflow-x-auto">
+              <table class="table w-full">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody id="table-container"> -->
+          <!-- <tr>
+                    <th>1</th>
+                    <td>Cy Ganderton</td>
+                    <td>Quality Control Specialist</td>
+                    <td>Blue</td>
+                  </tr> -->
+          <!-- </tbody> -->
+          <!-- </table> -->
+          <!-- </div> -->
+        </div>
+      </section>
     </main>
   </body>
 </html>
