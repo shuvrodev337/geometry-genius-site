@@ -136,3 +136,21 @@ changeBackground("ellipse-card")
   })
 
   
+  // remove calculation
+  document.getElementById("table-container").addEventListener("click",function (event) {
+    if (event.target.innerText==="X") { 
+      event.target.parentNode.parentNode.parentNode.removeChild(event.target.parentNode.parentNode)
+    }else if (event.target.innerText==="Convert to m2") {
+      const areaElement=event.target.parentNode.previousElementSibling.previousElementSibling
+      const areaInCm=parseFloat(areaElement.innerText)
+      const areaInMeter=areaInCm/10000
+      areaElement.innerText=areaInMeter
+
+      // const cmSquare=event.target.parentNode.previousElementSibling.innerHTML
+      event.target.parentNode.previousElementSibling.innerHTML="m<sup>2</sup>"
+
+      // console.log(areaInMeter,cmSquare);
+    }
+  })
+  
+  //

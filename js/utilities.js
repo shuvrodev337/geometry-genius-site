@@ -33,10 +33,14 @@ function getTextElementValueByID(elementID) {
     tr.innerHTML = `
         <td>${serial}.</td>
         <td>${shapeName}</td>
-        <td>${area} cm<sup>2</sup></td>
+        <td>${area} </td>
+        <td>cm<sup>2</sup></td>
   
         <td>
         <button class="btn bg-blue-500 btn-sm rounded px-4 py-2">Convert to m<sup>2</sup></button>
+        </td>
+        <td>
+        <button id="btn-Delete" class="btn bg-red-500 btn-sm rounded px-4 py-2">X</button>
         </td>
         
       `;
