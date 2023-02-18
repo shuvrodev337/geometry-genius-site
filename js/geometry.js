@@ -30,10 +30,10 @@ function addToCalculationField(serial, shapeName, area) {
   tr.innerHTML = `
       <td>${serial}.</td>
       <td>${shapeName}</td>
-      <td>${area}cm(squared)</td>
+      <td>${area} cm<sup>2</sup></td>
 
       <td>
-      <button class="btn bg-blue-500 btn-sm rounded px-4 py-2">Convert to m2</button>
+      <button class="btn bg-blue-500 btn-sm rounded px-4 py-2">Convert to m<sup>2</sup></button>
       </td>
       
     `;
@@ -116,11 +116,33 @@ document
 document
   .getElementById("btn-pentagonArea-calc")
   .addEventListener("click", function () {
-    console.log("pentagon");
+    const pentagonPerimeter=getInputValueByID("pentagon-p-field")
+    if (pentagonPerimeter=== false) {
+      return
+    }
+    const pentagonApothem=getInputValueByID("pentagon-b-field")
+    if (pentagonApothem=== false) {
+      return
+    }
+    const pentagonArea=(0.5 * pentagonPerimeter * pentagonApothem).toFixed(2)
+    calculationCount++
+    addToCalculationField(calculationCount,"Pentagon",pentagonArea)
+
   });
 // Ellipse area calculation
 document
   .getElementById("btn-ellipseArea-calc")
   .addEventListener("click", function () {
-    console.log("ellipse");
+    const pi= 3.1416
+    const ellipseAxisA=getInputValueByID("ellipse-a-field")
+    if (ellipseAxisA=== false) {
+      return
+    }
+    const ellipseAxisB=getInputValueByID("ellipse-b-field")
+    if (ellipseAxisB=== false) {
+      return
+    }
+    const ellipseArea= (pi * ellipseAxisA* ellipseAxisB).toFixed(2)
+    calculationCount++
+    addToCalculationField(calculationCount,"Ellipse",ellipseArea)
   });
