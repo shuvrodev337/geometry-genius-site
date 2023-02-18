@@ -24,7 +24,7 @@ function getInputValueByID(elementID) {
   return inputValue;
 }
 
-function addCalculation(serial, shapeName, area) {
+function addToCalculationField(serial, shapeName, area) {
   const container = document.getElementById("table-container");
   const tr = document.createElement("tr");
   tr.innerHTML = `
@@ -45,9 +45,7 @@ function addCalculation(serial, shapeName, area) {
 let calculationCount = 0;
 
 // Triangle area calculation
-document
-  .getElementById("btn-triangleArea-calc")
-  .addEventListener("click", function () {
+document.getElementById("btn-triangleArea-calc").addEventListener("click", function () {
     const triangleBase = getInputValueByID("triangle-b-field");
     if (triangleBase=== false) {
       return
@@ -56,31 +54,63 @@ document
     if (triangleHeight=== false) {
       return
     }
-    const triangleArea = 0.5 * triangleBase * triangleHeight;
-    const geometricalShape = "Triangle";
+    const triangleArea = (0.5 * triangleBase * triangleHeight).toFixed(2);
 
     calculationCount++;
-    addCalculation(calculationCount, geometricalShape, triangleArea);
+    addToCalculationField(calculationCount, "Triangle", triangleArea);
   });
 
 // Rectangle area calculation
 document
   .getElementById("btn-rectangleArea-calc")
   .addEventListener("click", function () {
-    console.log("rectangle");
+    const rectangleWidth=getInputValueByID("rectangle-w-field")
+    if (rectangleWidth=== false) {
+      return
+    }
+    const rectangleLength=getInputValueByID("rectagle-l-field")
+    if (rectangleLength=== false) {
+      return
+    }
+    const rectangleArea=(rectangleWidth * rectangleLength).toFixed(2)
+
+    calculationCount++
+    addToCalculationField(calculationCount,"Rectangle",rectangleArea)
+
   });
 
 // Parallelogram area calculation
 document
   .getElementById("btn-parallelogramArea-calc")
   .addEventListener("click", function () {
-    console.log("parallelogram");
+    const parallelogramBase=getInputValueByID("parallelogram-b-field")
+    if (parallelogramBase=== false) {
+      return
+    }
+    const parallelogramHeight=getInputValueByID("parallelogram-h-field")
+    if (parallelogramHeight=== false) {
+      return
+    }
+    const parallelogramArea=(parallelogramBase*parallelogramHeight).toFixed(2)
+    calculationCount++
+    addToCalculationField(calculationCount,"Parallelogram",parallelogramArea)
   });
 // Rhombus area calculation
 document
   .getElementById("btn-rhombusArea-calc")
   .addEventListener("click", function () {
-    console.log("rhombus");
+    const rhombusD1=getInputValueByID("rhombus-d1-field")
+    if (rhombusD1=== false) {
+      return
+    }
+    const rhombusD2=getInputValueByID("rhombus-d2-field")
+    if (rhombusD2=== false) {
+      return
+    }
+    const rhombusArea=(0.5 * rhombusD1 * rhombusD2).toFixed(2)
+    calculationCount++
+    addToCalculationField(calculationCount,"Rhombus",rhombusArea)
+
   });
 // Pentagon area calculation
 document
