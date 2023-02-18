@@ -146,3 +146,34 @@ document
     calculationCount++
     addToCalculationField(calculationCount,"Ellipse",ellipseArea)
   });
+
+
+  // Mouse hover part
+  function changeHex(elementID) {
+    const hexValues = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
+    let hexCode = '#';
+    for (let i = 0; i < 6; i++) {
+      const index = Math.floor(Math.random() * hexValues.length)
+      hexCode += hexValues[index];
+    }
+    document.getElementById(elementID).style.backgroundColor=hexCode
+  }
+
+  document.getElementById("triangle-card").addEventListener("mouseenter",function (event) {
+changeHex("triangle-card")
+  })
+  document.getElementById("rectangle-card").addEventListener("mouseenter",function (event) {
+changeHex("rectangle-card")
+  })
+  document.getElementById("parallelogram-card").addEventListener("mouseenter",function (event) {
+changeHex("parallelogram-card")
+  })
+  document.getElementById("rhombus-card").addEventListener("mouseenter",function (event) {
+changeHex("rhombus-card")
+  })
+  document.getElementById("pentagon-card").addEventListener("mouseenter",function (event) {
+changeHex("pentagon-card")
+  })
+  document.getElementById("ellipse-card").addEventListener("mouseenter",function (event) {
+changeHex("ellipse-card")
+  })
