@@ -1,11 +1,11 @@
 // common functions
 
-// Getting text based element value by ID
+// Function to get text based element value by ID
 function getTextElementValueByID(elementID) {
     const element = document.getElementById(elementID);
     return element.innerText;
   }
-  // Getting input element value by ID
+  // Function to get input element value by ID
   function getInputValueByID(elementID) {
     const inputElement = document.getElementById(elementID);
     const inputElementString = inputElement.value;
@@ -26,7 +26,7 @@ function getTextElementValueByID(elementID) {
     return inputValue;
   }
   
-  // Adding calculation to the calculation card table
+  // Function to add area calculations to the calculation card table
   function addToCalculationField(serial, shapeName, area) {
     const container = document.getElementById("table-container");
     const tr = document.createElement("tr");
@@ -47,7 +47,7 @@ function getTextElementValueByID(elementID) {
     container.appendChild(tr);
   }
   
-  //  Changing Eelement background to a random color
+  //  Function to change Element background to a random color
   
   function changeBackground(elementID) {
     const hexValues = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
