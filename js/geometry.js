@@ -1,24 +1,27 @@
 // common functions
 
 function getTextElementValueByID(elementID) {
-    const element = document.getElementById(elementID);
-    return element.innerText;
-  }
+  const element = document.getElementById(elementID);
+  return element.innerText;
+}
 function getInputValueByID(elementID) {
-    const inputElement = document.getElementById(elementID);
-    const inputElementString = inputElement.value;
-    const inputValue = parseFloat(inputElementString);
-    if (isNaN(inputElementString)) {
-        alert("error")
-      return 
-    }
-    return inputValue;
+  const inputElement = document.getElementById(elementID);
+  const inputElementString = inputElement.value;
+  const inputValue = parseFloat(inputElementString);
+  if (inputElementString === "") {
+    alert("Please provide value");
+    return false;
+  } else if (isNaN(inputElementString)) {
+    alert("error!!! Please type numbers");
+    return false;
   }
+  return inputValue;
+}
 
-  function addCalculation(serial,shapeName,area) {
-    const container = document.getElementById("table-container");
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
+function addCalculation(serial, shapeName, area) {
+  const container = document.getElementById("table-container");
+  const tr = document.createElement("tr");
+  tr.innerHTML = `
       <td>${serial}.</td>
       <td>${shapeName}</td>
       <td>${area}cm(squared)</td>
@@ -28,49 +31,70 @@ function getInputValueByID(elementID) {
       </td>
       
     `;
-    container.appendChild(tr);
-  }
+  container.appendChild(tr);
+}
 
-  function inputValidation(userInput) {
-    if (isNaN(userInput)) {
-        return "Please input valid numbers"
-    }
-    return true
+function inputValidation(userInput) {
+  if (isNaN(userInput)) {
+    alert("Please input valid numbers");
+    return;
   }
+  return true;
+}
 // -----------------------------------------------//
-let calculationCount=0
+let calculationCount = 0;
 
 // Triangle area calculation
-document.getElementById("btn-triangleArea-calc").addEventListener("click",function () {
-    const triangleBase=getInputValueByID("triangle-b-field")
-    const triangleHeight=getInputValueByID("triangle-h-field")
-    const triangleArea= 0.5 * triangleBase * triangleHeight
-    const geometricalShape= "Triangle"
-    // const inputValidity=inputValidation
-    calculationCount++
-    addCalculation(calculationCount,geometricalShape,triangleArea)
-})
+document
+  .getElementById("btn-triangleArea-calc")
+  .addEventListener("click", function () {
+    const triangleBase = getInputValueByID("triangle-b-field");
+    if (triangleBase=== false) {
+      return
+    }
+    const triangleHeight = getInputValueByID("triangle-h-field");
+    if (triangleHeight=== false) {
+      return
+    }
+    const triangleArea = 0.5 * triangleBase * triangleHeight;
+    const geometricalShape = "Triangle";
+    // const inputValidity = inputValidation(triangleArea);
+    // if (inputValidity !== true) {
+    //   return;
+    // }
+
+    calculationCount++;
+    addCalculation(calculationCount, geometricalShape, triangleArea);
+  });
 
 // Rectangle area calculation
-document.getElementById("btn-rectangleArea-calc").addEventListener("click",function () {
+document
+  .getElementById("btn-rectangleArea-calc")
+  .addEventListener("click", function () {
     console.log("rectangle");
-})
-
+  });
 
 // Parallelogram area calculation
-document.getElementById("btn-parallelogramArea-calc").addEventListener("click",function () {
+document
+  .getElementById("btn-parallelogramArea-calc")
+  .addEventListener("click", function () {
     console.log("parallelogram");
-})
+  });
 // Rhombus area calculation
-document.getElementById("btn-rhombusArea-calc").addEventListener("click",function () {
+document
+  .getElementById("btn-rhombusArea-calc")
+  .addEventListener("click", function () {
     console.log("rhombus");
-})
+  });
 // Pentagon area calculation
-document.getElementById("btn-pentagonArea-calc").addEventListener("click",function () {
+document
+  .getElementById("btn-pentagonArea-calc")
+  .addEventListener("click", function () {
     console.log("pentagon");
-})
+  });
 // Ellipse area calculation
-document.getElementById("btn-ellipseArea-calc").addEventListener("click",function () {
+document
+  .getElementById("btn-ellipseArea-calc")
+  .addEventListener("click", function () {
     console.log("ellipse");
-})
-
+  });
