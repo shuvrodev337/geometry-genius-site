@@ -9,10 +9,16 @@ function getInputValueByID(elementID) {
   const inputElementString = inputElement.value;
   const inputValue = parseFloat(inputElementString);
   if (inputElementString === "") {
-    alert("Please provide value");
+    alert("Error!!! Please provide value in every field!");
     return false;
   } else if (isNaN(inputElementString)) {
-    alert("error!!! Please type numbers");
+    alert("Error!!! Please type numbers!");
+    return false;
+  } else if (inputValue <0) {
+    alert("Error!!! Any figure with negative unit area is not possible!!");
+    return false;
+  } else if (inputValue === 0) {
+    alert("Error!!! Any figure with zero unit area is not possible!");
     return false;
   }
   return inputValue;
@@ -34,13 +40,7 @@ function addCalculation(serial, shapeName, area) {
   container.appendChild(tr);
 }
 
-function inputValidation(userInput) {
-  if (isNaN(userInput)) {
-    alert("Please input valid numbers");
-    return;
-  }
-  return true;
-}
+
 // -----------------------------------------------//
 let calculationCount = 0;
 
@@ -58,10 +58,6 @@ document
     }
     const triangleArea = 0.5 * triangleBase * triangleHeight;
     const geometricalShape = "Triangle";
-    // const inputValidity = inputValidation(triangleArea);
-    // if (inputValidity !== true) {
-    //   return;
-    // }
 
     calculationCount++;
     addCalculation(calculationCount, geometricalShape, triangleArea);
