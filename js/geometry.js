@@ -1,47 +1,13 @@
-// common functions
-
-function getTextElementValueByID(elementID) {
-  const element = document.getElementById(elementID);
-  return element.innerText;
-}
-function getInputValueByID(elementID) {
-  const inputElement = document.getElementById(elementID);
-  const inputElementString = inputElement.value;
-  const inputValue = parseFloat(inputElementString);
-  if (inputElementString === "") {
-    alert("Error!!! Please provide value in every field!");
-    return false;
-  } else if (isNaN(inputElementString)) {
-    alert("Error!!! Please type numbers!");
-    return false;
-  } else if (inputValue <0) {
-    alert("Error!!! Any figure with negative unit area is not possible!!");
-    return false;
-  } else if (inputValue === 0) {
-    alert("Error!!! Any figure with zero unit area is not possible!");
-    return false;
-  }
-  return inputValue;
-}
-
-function addToCalculationField(serial, shapeName, area) {
-  const container = document.getElementById("table-container");
-  const tr = document.createElement("tr");
-  tr.innerHTML = `
-      <td>${serial}.</td>
-      <td>${shapeName}</td>
-      <td>${area} cm<sup>2</sup></td>
-
-      <td>
-      <button class="btn bg-blue-500 btn-sm rounded px-4 py-2">Convert to m<sup>2</sup></button>
-      </td>
-      
-    `;
-  container.appendChild(tr);
-}
 
 
-// -----------------------------------------------//
+
+//------------ Blog page redirection----------//
+document.getElementById("blog-btn").addEventListener("click",function () {
+  window.location.href = "blog.html";
+})
+
+
+//---------- calculation from cards-------------------//
 let calculationCount = 0;
 
 // Triangle area calculation
@@ -149,31 +115,24 @@ document
 
 
   // Mouse hover part
-  function changeHex(elementID) {
-    const hexValues = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
-    let hexCode = '#';
-    for (let i = 0; i < 6; i++) {
-      const index = Math.floor(Math.random() * hexValues.length)
-      hexCode += hexValues[index];
-    }
-    document.getElementById(elementID).style.backgroundColor=hexCode
-  }
 
   document.getElementById("triangle-card").addEventListener("mouseenter",function (event) {
-changeHex("triangle-card")
+changeBackground("triangle-card")
   })
   document.getElementById("rectangle-card").addEventListener("mouseenter",function (event) {
-changeHex("rectangle-card")
+changeBackground("rectangle-card")
   })
   document.getElementById("parallelogram-card").addEventListener("mouseenter",function (event) {
-changeHex("parallelogram-card")
+changeBackground("parallelogram-card")
   })
   document.getElementById("rhombus-card").addEventListener("mouseenter",function (event) {
-changeHex("rhombus-card")
+changeBackground("rhombus-card")
   })
   document.getElementById("pentagon-card").addEventListener("mouseenter",function (event) {
-changeHex("pentagon-card")
+changeBackground("pentagon-card")
   })
   document.getElementById("ellipse-card").addEventListener("mouseenter",function (event) {
-changeHex("ellipse-card")
+changeBackground("ellipse-card")
   })
+
+  
