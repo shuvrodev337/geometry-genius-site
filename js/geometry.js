@@ -114,7 +114,7 @@ document
   });
 
 
-  // Mouse hover part
+  // Mouse hover to change background color part
 
   document.getElementById("triangle-card").addEventListener("mouseenter",function (event) {
 changeBackground("triangle-card")
@@ -136,21 +136,17 @@ changeBackground("ellipse-card")
   })
 
   
-  // remove calculation
+  // Delete button and meter square conversion
+
   document.getElementById("table-container").addEventListener("click",function (event) {
     if (event.target.innerText==="X") { 
       event.target.parentNode.parentNode.parentNode.removeChild(event.target.parentNode.parentNode)
     }else if (event.target.innerText==="Convert to m2") {
       const areaElement=event.target.parentNode.previousElementSibling.previousElementSibling
       const areaInCm=parseFloat(areaElement.innerText)
-      const areaInMeter=areaInCm/10000
+      const areaInMeter=(areaInCm/10000).toFixed(2)
       areaElement.innerText=areaInMeter
-
-      // const cmSquare=event.target.parentNode.previousElementSibling.innerHTML
       event.target.parentNode.previousElementSibling.innerHTML="m<sup>2</sup>"
 
-      // console.log(areaInMeter,cmSquare);
     }
   })
-  
-  //
